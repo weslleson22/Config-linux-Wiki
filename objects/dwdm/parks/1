@@ -1,0 +1,12 @@
+
+define host {
+        host_name                       dwdm-parks-acailandia
+        use                             generic-switch
+        alias                           dwdm-parks-acailandia
+        address                         10.1.60.42
+#        notes                           latlng:  -3.73774, -40.9918
+#        parents                         dwdm-parks-piripiri
+        }
+
+
+
