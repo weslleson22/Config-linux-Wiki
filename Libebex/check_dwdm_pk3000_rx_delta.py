@@ -51,8 +51,9 @@ currentRx=jsonResponse["data"]["cardData"][placa-1]["da"][1]
 result=float(currentRx)
 
 rx = result
-
-diffRx = float(rxRef)-float(rx)
+print(rx)
+print(rxRef)
+diffRx = abs(float(rxRef)) - abs(float(rx))
 
 
 if(diffRx >= 0 ):
