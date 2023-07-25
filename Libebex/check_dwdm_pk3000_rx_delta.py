@@ -47,25 +47,22 @@ jsonResponse = response.json()
 
 currentRx=jsonResponse["data"]["cardData"][placa-1]["da"][1]
 
-
+#Wes
 result=float(currentRx)
 
 rx = result
 
-diffRx = abs(rx-rxRef)
+diffRx = float(rxRef)-float(rx)
 
 
-if(diffRx >= 0 and diffRx <= 1):
-      #print("OK ",result['rx'],"|'Rx'=",result['rx'],";-26;-40;-15,-25",sep="")
-      print("OK ",result,"|'Rx'=",result,";-26;-40;-15,-25",sep="")
-      exit(OK)
-if(diffRx >1 and diffRx < 3):
-      #print("WARNING ",result['rx'],"|'Rx'=",result['rx'],";-26;-40;-15,-25",sep="")
-       print("WARNING ",result,"|'Rx'=",result,";-26;-40;-15,-25",sep="")
-       exit(WARNING)
-if(diffRx >= 3):
-      #print("CRITICAL ",result['rx'],"|'Rx'=",result['rx'],";-26;-40;-15,-25",sep="")
-       print("CRITICAL ",result,"|'Rx'=",result,";-26;-40;-15,-25",sep="")
-       exit(CRITICAL)
+if(diffRx >= 0 ):
+        print('Ganho de {:.2f}'.format(diffRx),"|'Delta'=",'{:.2f}'.format(diffRx),";-26;-40;-15,-25",sep="")
+        exit(OK)
+
+if(diffRx <0):
+        print('Atenuação de {:.2f}'.format(diffRx),"|'Delta'=",'{:.2f}'.format(diffRx),";-26;-40;-15,-25",sep="")
+        exit(WARNING)
+
+
 
 

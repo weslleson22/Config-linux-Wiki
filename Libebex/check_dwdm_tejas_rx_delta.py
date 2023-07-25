@@ -6,7 +6,7 @@ import sys
 import requests
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-
+##WEsleson
 def Main():
     sinalCorrente = getData(host=host,porta=porta)
     sinalReferencia = {
